@@ -2,6 +2,7 @@
 
 import { requireAuth } from "@/lib/auth-utils"
 import { caller } from "@/trpc/server";
+import { LogoutButton } from "./logout";
 
 
 
@@ -15,7 +16,10 @@ const page = async () => {
     <div className="min-h-screen min-w-screen flex
     items-center justify-center">
       Protected Server Component
-      {JSON.stringify(data)}
+      <div>
+        {JSON.stringify(data)}
+      </div>
+      <LogoutButton />
       
     </div>
   )
