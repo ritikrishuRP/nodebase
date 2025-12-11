@@ -8,6 +8,7 @@ import { generateText } from 'ai';
 
 export const appRouter = createTRPCRouter({
   testAi: protectedProcedure.mutation(async()=>{
+    throw new TRPCError({code: 'BAD_REQUEST', message: 'Testing error handling'});
     await inngest.send({
       name: "execute/ai",
     });
